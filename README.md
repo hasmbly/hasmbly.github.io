@@ -8,7 +8,6 @@
 - Blazor
 - Azure DevOps
 - Azure Resources
-- Etc.
 
 ### Previous Tech Stack:
 - Laravel
