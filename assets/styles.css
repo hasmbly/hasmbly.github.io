@@ -144,8 +144,7 @@ a:hover {
   min-height: min(45rem, calc(100vh - 4.75rem));
   padding-block: clamp(5rem, 12vw, 9rem);
   align-items: center;
-  grid-template-columns: minmax(0, 1fr) minmax(13rem, 20rem);
-  gap: clamp(3rem, 9vw, 8rem);
+  grid-template-columns: minmax(0, 1fr);
 }
 
 .hero-copy {
@@ -236,38 +235,6 @@ h3 {
   min-height: 3rem;
   padding-inline: 0.35rem;
   align-content: center;
-}
-
-.portrait-frame {
-  position: relative;
-  display: grid;
-  aspect-ratio: 196 / 186;
-  margin: 0;
-  padding: clamp(0.7rem, 2vw, 1rem);
-  place-items: center;
-  border: 1px solid var(--line);
-  border-radius: 50%;
-  background: var(--surface);
-  box-shadow: var(--shadow);
-}
-
-.portrait-frame::after {
-  position: absolute;
-  z-index: -1;
-  width: 38%;
-  aspect-ratio: 1;
-  right: -4%;
-  bottom: 2%;
-  border-radius: 50%;
-  background: var(--accent);
-  content: "";
-}
-
-.portrait-frame img {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  object-fit: contain;
 }
 
 .section {
@@ -732,15 +699,6 @@ h3 {
     padding-block: 4.5rem 5.5rem;
     grid-template-columns: 1fr;
     gap: 3.5rem;
-  }
-
-  .hero-copy {
-    order: 2;
-  }
-
-  .portrait-frame {
-    width: min(12rem, 54vw);
-    order: 1;
   }
 
   .intro-grid {
