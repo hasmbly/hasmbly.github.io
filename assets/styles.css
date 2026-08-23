@@ -139,6 +139,19 @@ a:hover {
   text-underline-offset: 0.45rem;
 }
 
+.nav-list .nav-cv {
+  min-height: 2.5rem;
+  padding: 0.55rem 0.9rem;
+  border-radius: 0.65rem;
+  background: var(--ink);
+  color: #fff;
+}
+
+.nav-list .nav-cv:hover {
+  background: var(--accent-dark);
+  color: #fff;
+}
+
 .hero {
   display: grid;
   min-height: min(45rem, calc(100vh - 4.75rem));
@@ -190,13 +203,6 @@ h3 {
   font-size: clamp(1.08rem, 2vw, 1.28rem);
 }
 
-.button-row {
-  display: flex;
-  margin-top: 2.25rem;
-  flex-wrap: wrap;
-  gap: 0.8rem;
-}
-
 .button {
   display: inline-flex;
   min-height: 3rem;
@@ -220,21 +226,10 @@ h3 {
   color: #fff;
 }
 
-.button-secondary {
-  border-color: var(--line);
-  background: var(--surface);
-}
-
 .text-link {
   color: var(--accent-dark);
   font-weight: 750;
   text-decoration-color: rgb(36 89 211 / 45%);
-}
-
-.hero-contact {
-  min-height: 3rem;
-  padding-inline: 0.35rem;
-  align-content: center;
 }
 
 .section {

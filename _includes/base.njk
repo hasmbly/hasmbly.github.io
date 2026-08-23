@@ -36,9 +36,12 @@
         <nav aria-label="Primary navigation">
           <ul class="nav-list">
             <li><a href="/"{% if navSection == "home" %} aria-current="page"{% endif %}>Profile</a></li>
-            <li><a href="/#experience">Experience</a></li>
-            <li><a href="/#projects">Projects</a></li>
             <li><a href="/blogs/"{% if navSection == "blogs" %} aria-current="page"{% endif %}>Blogs</a></li>
+            <li>
+              <a class="nav-cv" href="/output/pdf/hasbi-cv.pdf" target="_blank" rel="noopener">
+                My CV<span class="visually-hidden"> (opens in a new tab)</span>
+              </a>
+            </li>
           </ul>
         </nav>
       </div>
