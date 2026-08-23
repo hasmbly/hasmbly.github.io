@@ -1,0 +1,25 @@
+---
+layout: base.njk
+---
+<article class="article shell">
+  <header class="article-header">
+    <p class="eyebrow">From the blog</p>
+    <h1>{{ title }}</h1>
+    <div class="article-meta">
+      <time datetime="{{ date | dateMachine }}">{{ date | dateReadable }}</time>
+      {% set visibleTags = tags | postTags %}
+      {% if visibleTags.length %}
+        <span aria-hidden="true">/</span>
+        <ul class="tag-list" aria-label="Topics">
+          {% for tag in visibleTags %}<li>{{ tag }}</li>{% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+  </header>
+  <div class="prose">
+    {{ content | safe }}
+  </div>
+  <footer class="article-footer">
+    <a class="text-link" href="/blogs/">Back to all posts <span aria-hidden="true">&rarr;</span></a>
+  </footer>
+</article>

@@ -1,0 +1,39 @@
+---
+layout: base.njk
+title: Blogs
+description: Notes from Hasbi about software engineering, architecture, performance, and the systems behind reliable products.
+navSection: blogs
+permalink: blogs/index.html
+---
+<section class="page-intro shell" aria-labelledby="blogs-title">
+  <p class="eyebrow">Writing</p>
+  <h1 id="blogs-title">Blogs</h1>
+  <p>Notes on software engineering, architecture, performance, and the practical work of building reliable systems.</p>
+</section>
+
+<section class="blog-archive shell" aria-labelledby="all-posts-title">
+  <h2 id="all-posts-title" class="visually-hidden">All posts</h2>
+  {% if collections.posts.length %}
+    <ol class="post-list">
+      {% for post in collections.posts %}
+        <li class="post-list-item">
+          <article>
+            <div class="post-list-heading">
+              <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+              <time datetime="{{ post.date | dateMachine }}">{{ post.date | dateReadable }}</time>
+            </div>
+            <p>{{ post.templateContent | excerpt }}</p>
+            {% set visibleTags = post.data.tags | postTags %}
+            {% if visibleTags.length %}
+              <ul class="tag-list" aria-label="Topics">
+                {% for tag in visibleTags %}<li>{{ tag }}</li>{% endfor %}
+              </ul>
+            {% endif %}
+          </article>
+        </li>
+      {% endfor %}
+    </ol>
+  {% else %}
+    <p class="empty-state">The first article is being prepared. Please check back soon.</p>
+  {% endif %}
+</section>

@@ -1,48 +1,64 @@
-## Hello, I'm Hasbi 👋
-#### I have been working as a Software Engineer since 2019. Currently, I work as a Full-Stack Developer at PT Vioren Informatika Teknologi. I have a strong interest in Clean Architecture, as well as technical aspects related to improving system performance, memory efficiency, security, and other system enhancements. I thoroughly enjoy the process of diving deep into and solving complex technical problems.
+# Hasbi's portfolio
 
-### Current Tech Stack:
-- .NET 10
-- ASP.NET Core Web API
-- Microsoft SQL Server
-- Blazor
-- Azure DevOps
-- Azure Resources
+A light, minimal portfolio and Markdown blog built with Eleventy and published with GitHub Pages.
 
-### Previous Tech Stack:
-- Laravel
-- Go Echo
-- Angular
+## Local preview
 
-### Other Technical Skills:
-- Network administration using MikroTik
-- Server administration using Ubuntu Server (Linux)
-- Electrical installation
-- Radio software configuration
-- Raspberry Pi
+Requirements: Node.js 20 or newer.
 
-### Work Experience:
-- Feb 2020 – Present: Full-Stack Software Developer at PT Vioren Informatika Teknologi
-- Jul 2019 – Jan 2020: Back-End Software Developer at the Center for Data, Information, and Social Security (PUSDATIN) – Social Affairs Agency
+```text
+npm install
+npm run dev
+```
 
-### Recent Projects:
-- Dec 2025 - Aug 2026 - PT Adaro Minerals Indonesia Tbk
-  - Developed a hybrid WPF-Blazor desktop application for coal weighing operations; the application integrates three hardware components: RFID readers, weighbridges, and LED traffic light relays.
-  - Developed a .NET console application running as a service on a Linux server to handle hauling transactions and trip data for all RFID-tagged dump trucks; the service receives and processes data from an MQTT broker using concurrency and parallelism.
-- Jun 2025 - Dec 2025 (Phase II) - PT Pertamina International Shipping
-  - Developed additional features for the InvestaSea application and integrated revenue and cost data from a third-party application, IMIS. - Sep 2024 - Nov 2024 (Phase I) - PT Pertamina International Shipping
-  - Developed the "Project Monitoring on Return" application named InvestaSea; this application is designed to monitor investments that have passed the planning stage and reached the Final Investment Decision (FID) milestone, as well as to track all economic indicators on a monthly basis.
-- Jan 2024 - Feb 2024 - Upfield Indonesia (Flora Food Group)
-  - Performance enhancements for the existing Promotion and Claim Management System (PCMS).
-- Feb 2024 - Mar 2024 - Upfield Indonesia (Flora Food Group)
-  - Performance improvements for the data retrieval service that fetches data from Accurate Online (accounting and business software).
-- Jun 2024 - Dec 2024 - PT Pertamina Hulu Energi
-  - Implemented DevSecOps using Azure DevOps, SonarQube, and on-premise server agents; contributed to refining the existing solution/repository architecture for the internal development team.
+The production build is written to `_site/`:
 
-### Education:
-2014 – 2018: Universitas Indraprasta PGRI (UNINDRA)
+```text
+npm run build
+```
 
-### Social Media & Contact:
-- LinkedIn: https://www.linkedin.com/in/justhasby/
-- GitHub: https://github.com/hasmbly
-- Email: hasmbly@gmail.com
+## Writing a blog post
+
+Create a lowercase kebab-case Markdown file directly under `blogs/`, for example `blogs/building-reliable-services.md`.
+
+```markdown
+---
+title: Building Reliable Services
+date: 2026-08-23
+tags:
+  - dotnet
+  - architecture
+---
+
+The first paragraph becomes the post summary and metadata description.
+
+Continue the article here.
+```
+
+`title` and a valid `YYYY-MM-DD` date are required. `tags` is optional and accepts either one value or a list. The filename determines the URL. Raw HTML is disabled.
+
+Run `npm run build` before publishing. The build stops with a clear error if a post has an invalid filename, missing title, or invalid date.
+
+## Updating the CV
+
+The CV source is `scripts/generate_cv.py`; the public PDF is `output/pdf/hasbi-cv.pdf`.
+
+```text
+python -m pip install -r requirements-cv.txt
+python scripts/generate_cv.py
+```
+
+## Publishing
+
+The GitHub Actions workflow builds and deploys `_site/` whenever `main` is updated. In the repository settings, choose **GitHub Actions** as the Pages source.
+
+The initial public address is `https://hasmbly.github.io`.
+
+After `hasmbly.is-a.dev` has been approved and its DNS record is active:
+
+1. Verify the domain in the GitHub account Pages settings.
+2. Add a `CNAME` file under `public/` containing only `hasmbly.is-a.dev`.
+3. Set `hasmbly.is-a.dev` as the repository's Pages custom domain.
+4. Enable **Enforce HTTPS**.
+
+Do not add the `CNAME` file before the is-a.dev registration is merged, because doing so can redirect the working GitHub Pages address to an inactive domain.
