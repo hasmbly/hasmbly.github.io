@@ -45,7 +45,7 @@ export default function (eleventyConfig) {
     title: "Hasbi - Full-Stack Software Engineer",
     description:
       "Portfolio of Hasbi, a full-stack software engineer focused on reliable, secure, and efficient software.",
-    url: "https://hasmbly.github.io",
+    url: "https://hasmbly.is-a.dev",
   });
 
   eleventyConfig.addCollection("posts", (collectionApi) =>
