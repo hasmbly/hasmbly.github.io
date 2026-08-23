@@ -240,8 +240,11 @@ h3 {
 
 .portrait-frame {
   position: relative;
+  display: grid;
+  aspect-ratio: 196 / 186;
   margin: 0;
   padding: clamp(0.7rem, 2vw, 1rem);
+  place-items: center;
   border: 1px solid var(--line);
   border-radius: 50%;
   background: var(--surface);
@@ -262,9 +265,9 @@ h3 {
 
 .portrait-frame img {
   width: 100%;
-  aspect-ratio: 1;
+  height: 100%;
   border-radius: 50%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .section {
