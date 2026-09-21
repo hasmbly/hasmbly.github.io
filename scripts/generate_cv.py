@@ -175,7 +175,7 @@ def generate_cv():
     story.append(Paragraph(
         "I have worked as a software engineer since 2019. I currently work as a Full-Stack Developer at "
         "PT Vioren Informatika Teknologi. I have a strong interest in clean architecture and technical work "
-        "related to system performance, memory efficiency, and other system improvements. I enjoy digging "
+        "related to system performance and other system improvements. I enjoy digging "
         "into and solving complex technical problems.",
         styles["body"],
     ))
@@ -196,7 +196,7 @@ def generate_cv():
         [
             "Develop enterprise software across web, desktop, services, infrastructure, and hardware-integrated environments.",
             "Contribute to solutions for energy, shipping, manufacturing, and mining clients.",
-            "Apply clean architecture and investigate performance, memory, security, and maintainability concerns.",
+            "Apply clean architecture and investigate performance, security, and maintainability concerns.",
         ],
     ))
     story.append(entry_block(
